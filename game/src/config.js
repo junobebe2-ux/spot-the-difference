@@ -2,7 +2,7 @@
 var FL = window.FL || (window.FL = {});
 
 FL.CONFIG = {
-  levelCount: 5,
+  levelCount: 6,
   differencesPerLevel: 7,
   levelTimeSeconds: 90,
   hintsPerLevel: 3,
