@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Festival Lampion — Spot the Difference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">🏮 FESTIVAL LAMPION</div>
+    <div class="hud">
+      <span id="level-name" class="hud-item">Pasar Malam Lampion</span>
+      <span id="counter" class="hud-item counter">Ditemukan 0/7</span>
+      <span id="timer" class="hud-item timer">01:30</span>
+      <span id="score" class="hud-item">Skor 0</span>
+      <button id="hint-btn" type="button" class="hud-btn">💡 Petunjuk (<span id="hints-left">3</span>)</button>
+      <button id="btn-mute" type="button" class="hud-btn" aria-label="Bisukan suara">🔊</button>
+      <button id="btn-pause" type="button" class="hud-btn" aria-label="Jeda">⏸</button>
+    </div>
+  </header>
+
+  <main id="boards">
+    <section class="panel">
+      <div class="panel-label">ASLI</div>
+      <svg id="panel-left" viewBox="0 0 640 540" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Gambar asli"></svg>
+    </section>
+    <section class="panel">
+      <div class="panel-label">TEMUKAN 7 PERBEDAAN</div>
+      <svg id="panel-right" viewBox="0 0 640 540" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Gambar dengan perbedaan"></svg>
+    </section>
+  </main>
+
+  <footer id="statusbar">
+    <span id="status-text">Klik perbedaan pada gambar kiri atau kanan.</span>
+    <span class="keys">H petunjuk · R ulangi · M suara · Esc jeda · Enter lanjut</span>
+  </footer>
+
+  <div id="menu" class="overlay">
+    <div class="card">
+      <h1>🏮 FESTIVAL LAMPION</h1>
+      <p class="tagline">Spot the Difference — temukan 7 perbedaan di setiap adegan!</p>
+      <div class="howto">
+        <h2>Cara main</h2>
+        <ul>
+          <li>Dua gambar hampir sama. Klik <b>7 perbedaan</b> di gambar kiri atau kanan.</li>
+          <li>Setiap temuan: <b>+100 poin</b>. Klik salah: <b>−5 detik</b>. Waktu: <b>90 detik</b>.</li>
+          <li>Petunjuk (H): <b>3× per level</b>. Lima adegan menantimu!</li>
+        </ul>
+      </div>
+      <p id="menu-best" class="best">Skor terbaik: 0</p>
+      <div id="level-select" class="level-select"></div>
+      <button id="btn-start" type="button" class="big-btn">▶ Mulai</button>
+    </div>
+  </div>
+
+  <div id="pause-overlay" class="overlay hidden">
+    <div class="card">
+      <h1>⏸ Jeda</h1>
+      <p class="tagline">Istirahat sebentar, lampionnya tetap menyala.</p>
+      <button id="btn-resume" type="button" class="big-btn">▶ Lanjut</button>
+      <button id="btn-restart-level" type="button" class="big-btn secondary">↻ Ulangi level</button>
+      <button id="btn-quit-menu" type="button" class="big-btn secondary">☰ Menu utama</button>
+    </div>
+  </div>
+
+  <div id="level-complete-overlay" class="overlay hidden">
+    <div class="card">
+      <h1>🎉 Level Selesai!</h1>
+      <p id="complete-stars" class="stars">★★★</p>
+      <p id="complete-bonus" class="tagline">Bonus waktu: +0 poin</p>
+      <p id="complete-total" class="tagline">Skor total: 0</p>
+      <button id="btn-next-level" type="button" class="big-btn">Lanjut ▶</button>
+    </div>
+  </div>
+
+  <div id="level-failed-overlay" class="overlay hidden">
+    <div class="card">
+      <h1>⏰ Waktu Habis!</h1>
+      <p id="failed-found" class="tagline">Kamu menemukan 0 dari 7 perbedaan.</p>
+      <p class="tagline">Skor dari level yang sudah selesai tetap aman. Coba lagi!</p>
+      <button id="btn-retry" type="button" class="big-btn">↻ Coba lagi</button>
+    </div>
+  </div>
+
+  <div id="game-complete-overlay" class="overlay hidden">
+    <div class="card">
+      <h1>🏮 Festival Selesai!</h1>
+      <p class="tagline">Kamu menemukan semua perbedaan di lima adegan. Terima kasih sudah bermain!</p>
+      <p id="final-score" class="tagline">Skor total: 0</p>
+      <p id="final-best" class="tagline">Skor terbaik: 0</p>
+      <p id="final-stars" class="stars">★★★★★★★★★★★★★★★</p>
+      <button id="btn-play-again" type="button" class="big-btn">↻ Main lagi</button>
+    </div>
+  </div>
+</div>
+
+<script src="src/config.js"></script>
+<script src="src/random.js"></script>
+<script src="src/scenes.js"></script>
+<script src="src/render.js"></script>
+<script src="src/audio.js"></script>
+<script src="src/save.js"></script>
+<script src="src/input.js"></script>
+<script src="src/game.js"></script>
+<script src="src/shots.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
